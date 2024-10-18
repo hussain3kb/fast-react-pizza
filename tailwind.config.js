@@ -1,0 +1,67 @@
+/** @type {import('tailwindcss').Config} */
+const plugin = require("tailwindcss/plugin");
+
+export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    fontFamily: {
+      sans: "Roboto Mono, monospace",
+    },
+    extend: {},
+  },
+
+  plugins: [
+    plugin(function ({ addUtilities, theme }) {
+      addUtilities({
+        ".input": {},
+        ".loader": {},
+      });
+    }),
+  ],
+};
+
+// @layer components {
+//   .input {
+//     @apply w-full rounded-full border border-stone-200 px-4 py-2 text-sm transition-all duration-300 placeholder:text-stone-400 focus:outline-none focus:ring focus:ring-yellow-400 md:px-6 md:py-3;
+//   }
+
+//   /* https://dev.to/afif/i-made-100-css-loaders-for-your-next-project-4eje */
+//   .loader {
+//     width: 45px;
+//     aspect-ratio: 0.75;
+//     --c: no-repeat linear-gradient(theme(colors.stone.800) 0 0);
+//     background:
+//       var(--c) 0% 50%,
+//       var(--c) 50% 50%,
+//       var(--c) 100% 50%;
+//     background-size: 20% 50%;
+//     animation: loading 1s infinite linear;
+//   }
+
+//   @keyframes loading {
+//     20% {
+//       background-position:
+//         0% 0%,
+//         50% 50%,
+//         100% 50%;
+//     }
+//     40% {
+//       background-position:
+//         0% 100%,
+//         50% 0%,
+//         100% 50%;
+//     }
+//     60% {
+//       background-position:
+//         0% 50%,
+//         50% 100%,
+//         100% 0%;
+//     }
+//     80% {
+//       background-position:
+//         0% 50%,
+//         50% 50%,
+//         100% 100%;
+//     }
+//   }
+// }
